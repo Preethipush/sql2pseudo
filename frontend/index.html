@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SQL2PSEUDO</title>
+<link rel="stylesheet" href="/frontend/style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">S2P</div>
+      <div>
+        <div class="brand-name">SQL<span class="accent">2</span>PSEUDO</div>
+        <div class="brand-tagline">SQL to Pseudocode &middot; Simple English</div>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <button id="clear-btn" class="btn btn-ghost">Clear</button>
+      <button id="convert-btn" class="btn btn-primary">Convert</button>
+    </div>
+  </header>
+
+  <main>
+    <h1>SQL to Pseudocode</h1>
+    <p class="subtitle">Convert your SQL query into pseudocode and a plain-English explanation.</p>
+
+    <div class="grid-top">
+      <section class="panel">
+        <div class="panel-header">
+          <span class="badge">1</span>
+          <h2>SQL Input</h2>
+        </div>
+        <textarea id="sql-input" spellcheck="false">SELECT * FROM employees</textarea>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <span class="badge">2</span>
+          <h2>Pseudocode Output</h2>
+          <button id="copy-pseudo" class="btn btn-small">Copy</button>
+        </div>
+        <pre id="pseudo-output" class="code-output">Output will appear here.</pre>
+      </section>
+    </div>
+
+    <div id="error-box" class="error" hidden></div>
+
+    <div class="grid-bottom">
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Detected Objects</h2>
+        </div>
+        <div id="detected-output" class="detected-grid">
+          <p class="placeholder">Nothing converted yet.</p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>English Explanation</h2>
+          <button id="copy-explanation" class="btn btn-small">Copy</button>
+        </div>
+        <ul id="explanation-output" class="explanation-list">
+          <li class="placeholder">Nothing converted yet.</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer>&copy; 2026 SQL2PSEUDO</footer>
+
+  <script src="/frontend/app.js"></script>
+</body>
+</html>

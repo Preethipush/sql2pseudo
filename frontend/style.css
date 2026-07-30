@@ -1,0 +1,210 @@
+:root {
+  --bg: #f4f6fb;
+  --panel: #ffffff;
+  --code-bg: #0f172a;
+  --code-text: #cbd5e1;
+  --code-keyword: #93c5fd;
+  --code-string: #86efac;
+  --border: #e2e8f0;
+  --text: #1e293b;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --accent-dark: #1d4ed8;
+  --error: #dc2626;
+  --error-bg: #fee2e2;
+  --radius: 10px;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 2rem;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand { display: flex; align-items: center; gap: 0.7rem; }
+
+.brand-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.brand-name { font-weight: 700; font-size: 1.05rem; letter-spacing: 0.3px; }
+.brand-name .accent { color: var(--accent); }
+.brand-tagline { font-size: 0.72rem; color: var(--muted); }
+
+.topbar-actions { display: flex; gap: 0.6rem; }
+
+.btn {
+  border: none;
+  border-radius: 7px;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary { background: var(--accent); color: white; }
+.btn-primary:hover { background: var(--accent-dark); }
+.btn-primary:disabled { opacity: 0.55; cursor: default; }
+
+.btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.btn-ghost:hover { background: #f1f5f9; }
+
+.btn-small {
+  background: #eef2ff;
+  color: var(--accent-dark);
+  padding: 0.3rem 0.7rem;
+  font-size: 0.78rem;
+  border-radius: 6px;
+}
+.btn-small:hover { background: #e0e7ff; }
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem 3rem;
+}
+
+h1 { font-size: 1.5rem; margin: 0 0 0.2rem; }
+.subtitle { color: var(--muted); margin: 0 0 1.5rem; font-size: 0.92rem; }
+
+.grid-top, .grid-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+.grid-bottom { margin-top: 1.2rem; }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.7rem;
+}
+.panel-header h2 { font-size: 0.95rem; margin: 0; flex: 1; }
+
+.badge {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-size: 0.72rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+textarea#sql-input {
+  width: 100%;
+  min-height: 220px;
+  background: var(--code-bg);
+  color: var(--code-text);
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: var(--mono);
+  font-size: 0.88rem;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.code-output {
+  background: var(--code-bg);
+  color: var(--code-text);
+  border-radius: 8px;
+  padding: 1rem;
+  min-height: 220px;
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+.error {
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  background: var(--error-bg);
+  color: var(--error);
+  font-size: 0.88rem;
+}
+
+.detected-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.detected-item .label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--muted);
+  margin-bottom: 0.2rem;
+  font-weight: 600;
+}
+
+.detected-item .value {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--text);
+  background: #f1f5f9;
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  display: inline-block;
+}
+
+.explanation-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.placeholder { color: var(--muted); font-style: italic; }
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.78rem;
+  padding: 1.5rem 0;
+}
+
+@media (max-width: 900px) {
+  .grid-top, .grid-bottom { grid-template-columns: 1fr; }
+}
