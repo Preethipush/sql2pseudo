@@ -29,7 +29,6 @@ A lightweight, fast, and intelligent tool that converts Oracle-style SQL queries
 | HAVING clause               | Yes       | Good                           |
 | Subqueries in FROM          | Yes       | Clean temporary result set     |
 | Subqueries in WHERE (IN)    | Yes       | Clean temporary result set     |
-| Database Links (@dblink)    | Yes       | Shown in READ line             |
 | Complex SQL (UNION, CTE, EXISTS, Window functions) | Yes | Uses AI fallback |
 
 ---
