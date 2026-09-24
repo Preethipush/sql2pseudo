@@ -33,7 +33,7 @@ A lightweight, fast, and intelligent tool that converts Oracle-style SQL queries
 
 ---
 
-## How to Run
+## How to Run ##
 
 ```bash
 cd sql2pseudo
